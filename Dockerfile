@@ -28,7 +28,7 @@ ENV TZ="America/Chicago" \
     HOME="/tmp" \
 
     ##
-    # Use 1000:1001 as default user
+    # Use 1000:1000 as default user
     ##
     UNISON_USER="unison" \
     UNISON_UID="1000"
