@@ -18,7 +18,7 @@ if [ ! -d "$UNISON_DIR" ]; then
 fi
 
 # Change data owner
-chown -R $UNISON_USER $UNISON_DIR
+chown -R ${UNISON_USER}. $UNISON_DIR
 
 # Start process on path which we want to sync
 cd $UNISON_DIR
