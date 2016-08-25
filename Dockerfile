@@ -35,7 +35,7 @@ ENV TZ="America/Chicago" \
 
 
 # Install unison server script
-COPY ../entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 5000
 ENTRYPOINT ["/entrypoint.sh"]
