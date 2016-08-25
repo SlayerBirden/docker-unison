@@ -1,6 +1,6 @@
 # Docker Unison image based on Alpine Linux
 
-This is a fork from https://github.com/onnimonni/docker-unison.
+This is a fork from https://github.com/onnimonni/docker-unison. All credits go to original author.
 
 Please see main description on the parent repo.
 
