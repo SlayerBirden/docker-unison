@@ -6,5 +6,5 @@ Please see main description on the parent repo.
 
 # Changes
 
-- added 2.40 Unison version
+- added 2.40 Unison version - and support for it
 - improved (fixed) creation of the UNISON_USER and UNISON_GROUP in entrypoint.sh - now supported by **docker-compose**
