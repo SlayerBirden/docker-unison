@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  unison:
+    build: .
+    environment:
+      - UNISON_DIR=/srv/www
+      - UNISON_UID=33
+      - UNISON_USER=www-data
+    ports:
+      - "5000:5000"
+    volumes:
+      - /srv/www
