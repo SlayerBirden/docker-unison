@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Delete old group and user if already in use
+# Exit if user already exists
 USERTODEL=$(getent passwd $UNISON_UID | cut -d":" -f1)
-if [ -n "$USERTODEL" ]; then
-    echo "User $USERTODEL already existed. Proceeding to delete"
-    deluser $USERTODEL
+if [ -n "$USERTODEL" ] && [ "$USERTODEL" != "$UNISON_USER" ]; then
+    echo "User with UID $UNISON_UID already exists: $USERTODEL."
+    exit 1
 fi
 
 # there is a bug with adding a user to existing group
