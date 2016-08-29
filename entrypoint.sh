@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
 # Exit if user already exists
-USERTODEL=$(getent passwd $UNISON_UID | cut -d":" -f1)
-if [ -n "$USERTODEL" ] && [ "$USERTODEL" != "$UNISON_USER" ]; then
-    echo "User with UID $UNISON_UID already exists: $USERTODEL."
+EXISTING_USER=$(getent passwd $UNISON_UID | cut -d":" -f1)
+if [ -n "$EXISTING_USER" ] && [ "$EXISTING_USER" != "$UNISON_USER" ]; then
+    echo "User with UID $UNISON_UID already exists: $EXISTING_USER."
     exit 1
+elif [ -z "$EXISTING_USER" ]; then
+    adduser -D -u $UNISON_UID $UNISON_USER
 fi
-
-# there is a bug with adding a user to existing group
-#addgroup -g $UNISON_GID $UNISON_GROUP
-adduser -D -u $UNISON_UID $UNISON_USER
 
 # Create directory for filesync
 if [ ! -d "$UNISON_DIR" ]; then
